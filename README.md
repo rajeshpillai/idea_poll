@@ -9,8 +9,10 @@
 - Seed data
 - robocop gem  (then run bundle exec rubocop)
  -- .rubycop.yml
+- run rubo cop
+  - bundle exec rubocop -a (and -A)
 
- 
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
