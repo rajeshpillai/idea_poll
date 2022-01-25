@@ -22,4 +22,9 @@
   - rails db:reset
   - rails db:migrate
 
+- Scaffold message
+  - rails g scaffold message body:text inbox:references user:references
+
+  
+
 
