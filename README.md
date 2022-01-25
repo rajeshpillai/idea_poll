@@ -25,6 +25,7 @@
 - Scaffold message
   - rails g scaffold message body:text inbox:references user:references
 
-  
+- Create messages (via inbox)
+
 
 

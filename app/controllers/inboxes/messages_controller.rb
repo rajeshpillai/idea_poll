@@ -1,31 +1,19 @@
-class MessagesController < ApplicationController
-  before_action :set_message, only: %i[ show edit update destroy ]
-
-  # GET /messages or /messages.json
-  def index
-    @messages = Message.all
-  end
-
-  # GET /messages/1 or /messages/1.json
-  def show
-  end
+class Inboxes::MessagesController < ApplicationController
+  before_action :set_inbox
+  before_action :set_message, only: %i[ destroy ]
 
   # GET /messages/new
   def new
-    @message = Message.new
-  end
-
-  # GET /messages/1/edit
-  def edit
+    @message = @inbox.messages.new
   end
 
   # POST /messages or /messages.json
   def create
-    @message = Message.new(message_params)
+    @message = @inbox.messages.new(message_params)
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to message_url(@message), notice: "Message was successfully created." }
+        format.html { redirect_to @inbox, notice: "Message was successfully created." }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -52,7 +40,7 @@ class MessagesController < ApplicationController
     @message.destroy
 
     respond_to do |format|
-      format.html { redirect_to messages_url, notice: "Message was successfully destroyed." }
+      format.html { redirect_to @inbox, notice: "Message was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -65,6 +53,10 @@ class MessagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def message_params
-      params.require(:message).permit(:body)
+      params.require(:message).permit(:body).merge(user: current_user)
+    end
+
+    def set_inbox
+      @inbox = Inbox.find(params[:inbox_id])
     end
 end

@@ -46,6 +46,14 @@ a {
   word-break:break-word;
 }
 
+.message {
+  border: 2px solid #ddd;
+  padding: 6px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  word-break:break-word;
+}
+
 #errors {
   color: red;
   border: 2px solid red;
