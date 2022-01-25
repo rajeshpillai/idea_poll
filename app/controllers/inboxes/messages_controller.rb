@@ -1,51 +1,53 @@
-class Inboxes::MessagesController < ApplicationController
-  before_action :set_inbox
-  before_action :set_message, only: %i[ destroy ]
+module Inboxes
+  class MessagesController < ApplicationController
+    before_action :set_inbox
+    before_action :set_message, only: %i[destroy]
 
-  # GET /messages/new
-  def new
-    @message = @inbox.messages.new
-  end
+    # GET /messages/new
+    def new
+      @message = @inbox.messages.new
+    end
 
-  # POST /messages or /messages.json
-  def create
-    @message = @inbox.messages.new(message_params)
+    # POST /messages or /messages.json
+    def create
+      @message = @inbox.messages.new(message_params)
 
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to @inbox, notice: "Message was successfully created." }
-        format.json { render :show, status: :created, location: @message }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @message.save
+          format.html { redirect_to @inbox, notice: 'Message was successfully created.' }
+          format.json { render :show, status: :created, location: @message }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @message.errors, status: :unprocessable_entity }
+        end
       end
     end
-  end
 
-  # PATCH/PUT /messages/1 or /messages/1.json
-  def update
-    respond_to do |format|
-      if @message.update(message_params)
-        format.html { redirect_to message_url(@message), notice: "Message was successfully updated." }
-        format.json { render :show, status: :ok, location: @message }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
+    # PATCH/PUT /messages/1 or /messages/1.json
+    def update
+      respond_to do |format|
+        if @message.update(message_params)
+          format.html { redirect_to message_url(@message), notice: 'Message was successfully updated.' }
+          format.json { render :show, status: :ok, location: @message }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @message.errors, status: :unprocessable_entity }
+        end
       end
     end
-  end
 
-  # DELETE /messages/1 or /messages/1.json
-  def destroy
-    @message.destroy
+    # DELETE /messages/1 or /messages/1.json
+    def destroy
+      @message.destroy
 
-    respond_to do |format|
-      format.html { redirect_to @inbox, notice: "Message was successfully destroyed." }
-      format.json { head :no_content }
+      respond_to do |format|
+        format.html { redirect_to @inbox, notice: 'Message was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
-  end
 
-  private
+    private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_message
       @message = Message.find(params[:id])
@@ -59,4 +61,5 @@ class Inboxes::MessagesController < ApplicationController
     def set_inbox
       @inbox = Inbox.find(params[:inbox_id])
     end
+  end
 end
