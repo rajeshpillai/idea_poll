@@ -3,9 +3,9 @@
   <%= link_to inbox.name, inbox %>
   </h3>
   
-  <%= link_to "Edit", edit_inbox_path(inbox) %> 
+  <%= link_to "Edit", edit_inbox_path(inbox) if policy(inbox).edit? %> 
 
-  <%= button_to "Destroy", inbox_path(inbox), method: :delete %>
+  <%= button_to "Destroy", inbox_path(inbox), method: :delete if policy(inbox).destroy? %>
 
   Messages:
   <%= inbox.messages_count%>
