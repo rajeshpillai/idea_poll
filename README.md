@@ -39,5 +39,12 @@
   - rails g acts_as_votable:migration
   - rails db:migrate
 
+- User Authorization
+  - only owner can edit/destroy their inbox
+  - bundle add pundit
+  - rails g pundit:install  (will create policy folder)
+
+  
+
 
 
