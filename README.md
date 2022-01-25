@@ -15,4 +15,4 @@
 - add gem devise
 - make devise it work with turbo (data:turbo: false in views)
 
-
+- Style flash messages
