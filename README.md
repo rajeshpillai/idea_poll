@@ -1,5 +1,12 @@
 # README
 
+## Steps
+
+- rails new <projectname>
+- rails g controller static_pages landing_page pricing privacy terms
+- rails g scaffold inbox name
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
