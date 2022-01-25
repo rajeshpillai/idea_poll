@@ -16,3 +16,10 @@
 - make devise it work with turbo (data:turbo: false in views)
 
 - Style flash messages
+- Basic styles
+- Connect Inbox to User
+  - rails g migration add_user_id_to_inboxes user:references
+  - rails db:reset
+  - rails db:migrate
+
+
