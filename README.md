@@ -7,6 +7,10 @@
 - rails g scaffold inbox name  (also add validation in migration file, null)
 - bundle add faker
 - Seed data
+- robocop gem  (then run bundle exec rubocop)
+ -- .rubycop.yml
+
+ 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
