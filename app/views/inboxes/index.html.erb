@@ -1,15 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Inboxes</h1>
+<h1>Inboxes <%= @inboxes.length %> </h1>
 
 <div id="inboxes">
   <% @inboxes.each do |inbox| %>
-    <div class="inbox">
-      <%= render inbox %>
-      <p>
-        <%= link_to "Show this inbox", inbox %>
-      </p>
-    </div>
+    <%= render inbox %>
   <% end %>
 </div>
 
