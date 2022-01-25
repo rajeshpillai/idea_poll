@@ -74,3 +74,4 @@ end
 
 gem "faker", "~> 2.19"
 gem "devise"
+gem "acts_as_votable"

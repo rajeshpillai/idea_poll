@@ -34,5 +34,10 @@
   
 - Message Controller (refactor: @inbox.messages rather than Message.find etc)
 
+- User can vote on messages
+  - act_as_votable gem
+  - rails g acts_as_votable:migration
+  - rails db:migrate
+
 
 
