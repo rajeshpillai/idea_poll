@@ -44,7 +44,15 @@
   - bundle add pundit
   - rails g pundit:install  (will create policy folder)
 
-  
+- Friendly ID
+  - bundly add friendly_id
+  - rails g migration AddSlugToInboxes slug:uniq
+  - rails db:migrate
+  - rails console
+    - Inbox.find_each(&:save)   # update existing data
+    - Inbox.pluck(:slug)  # for testing
+
+
 
 
 
