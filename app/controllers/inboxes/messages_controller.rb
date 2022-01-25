@@ -1,7 +1,6 @@
 module Inboxes
   class MessagesController < ApplicationController
     before_action :set_inbox
-    before_action :set_message, only: %i[destroy]
 
     # GET /messages/new
     def new
@@ -38,6 +37,8 @@ module Inboxes
 
     # DELETE /messages/1 or /messages/1.json
     def destroy
+      @message = @inbox.messages.find(params[:id])
+
       @message.destroy
 
       respond_to do |format|
@@ -48,16 +49,13 @@ module Inboxes
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_message
-      @message = Message.find(params[:id])
-    end
-
+    
     # Only allow a list of trusted parameters through.
     def message_params
       params.require(:message).permit(:body).merge(user: current_user)
     end
-
+    
+    # Use callbacks to share common setup or constraints between actions.
     def set_inbox
       @inbox = Inbox.find(params[:inbox_id])
     end

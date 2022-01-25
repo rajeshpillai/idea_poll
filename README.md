@@ -32,5 +32,7 @@
 - Counter cache
   - rails g migration add_messages_count_to_inboxes messages_count:integer
   
+- Message Controller (refactor: @inbox.messages rather than Message.find etc)
+
 
 
