@@ -27,5 +27,10 @@
 
 - Create messages (via inbox)
 
+- Cleanup
+
+- Counter cache
+  - rails g migration add_messages_count_to_inboxes messages_count:integer
+  
 
 
