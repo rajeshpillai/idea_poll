@@ -2,10 +2,11 @@
 
 ## Steps
 
-- rails new <projectname>
+- rails new <projectname> -db=postgresql
 - rails g controller static_pages landing_page pricing privacy terms
-- rails g scaffold inbox name
-
+- rails g scaffold inbox name  (also add validation in migration file, null)
+- bundle add faker
+- Seed data
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
