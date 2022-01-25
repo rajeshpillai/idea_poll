@@ -49,12 +49,11 @@ module Inboxes
 
     private
 
-    
     # Only allow a list of trusted parameters through.
     def message_params
       params.require(:message).permit(:body).merge(user: current_user)
     end
-    
+
     # Use callbacks to share common setup or constraints between actions.
     def set_inbox
       @inbox = Inbox.find(params[:inbox_id])
