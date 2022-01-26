@@ -13,4 +13,3 @@ class Inbox < ApplicationRecord
 
   friendly_id :name, use: %i[slugged finders]
 end
-
