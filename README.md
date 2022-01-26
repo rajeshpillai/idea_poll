@@ -76,5 +76,9 @@
 
 - Add Theme Color to Inboxes
 
+- Add 'status' to 'message' (incoming etc)
+  - rails g migration add_status_to_message status:string   (assign default in migration file)
+
+  
 
 

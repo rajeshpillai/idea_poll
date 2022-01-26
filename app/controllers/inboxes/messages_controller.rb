@@ -2,6 +2,15 @@ module Inboxes
   class MessagesController < ApplicationController
     before_action :set_inbox
 
+    def change_status
+      @message = @inbox.messages.find(params[:id])
+      flash[:notice] = "Status for message #{@message.id}: #{@message.status}"
+      @message.update(status: params[:status])
+
+      redirect_to @inbox
+
+    end
+
     def upvote
       @message = @inbox.messages.find(params[:id])
       flash.now[:notice] = 'voted!'
@@ -16,7 +25,6 @@ module Inboxes
         end
       end
     end
-
 
     # POST /messages or /messages.json
     def create
