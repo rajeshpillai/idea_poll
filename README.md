@@ -66,3 +66,5 @@
   - Show messages when new message is added (without refresh)
   - Add destroy (turbo)
 
+- Fix order of messaging
+
