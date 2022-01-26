@@ -15,10 +15,6 @@ module Inboxes
       redirect_to @inbox
     end
 
-    # GET /messages/new
-    def new
-      @message = @inbox.messages.new
-    end
 
     # POST /messages or /messages.json
     def create
@@ -26,9 +22,16 @@ module Inboxes
 
       respond_to do |format|
         if @message.save
+          format.turbo_stream do
+            render turbo_stream: turbo_stream.update('message-form', partial: 'inboxes/messages/form', locals: {message: Message.new})
+          end
+
           format.html { redirect_to @inbox, notice: 'Message was successfully created.' }
           format.json { render :show, status: :created, location: @message }
         else
+          format.turbo_stream do
+            render turbo_stream: turbo_stream.update('message-form',partial: 'inboxes/messages/form', locals: {message: @message})
+          end
           format.html { render :new, status: :unprocessable_entity }
           format.json { render json: @message.errors, status: :unprocessable_entity }
         end

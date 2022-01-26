@@ -58,4 +58,7 @@
 
 - Gem : bundle add meta-tags
   - rails g meta_tags:install
+  - add meta tags to pages (layout, controller)
 
+- Turbo features
+  - Inbox -> Add Messages directly in inbox (inline)
