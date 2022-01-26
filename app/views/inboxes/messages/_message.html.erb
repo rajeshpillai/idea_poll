@@ -12,6 +12,8 @@
       change_status_inbox_message_path(@inbox, message, status: status), method: :patch %>
   <%end%>
 
+  <hr/>
+
   <%= button_to 'Upvote', [:upvote, @inbox, message], method: :patch %>
 
   <%= message.cached_votes_total %>
