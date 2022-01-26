@@ -4,11 +4,6 @@
     <%= simple_format(message.body) %>
   </p>
 
-  <p>
-    <strong>Inbox:</strong>
-    <%= link_to message.inbox.name, message.inbox %>
-  </p>
-
   <%= button_to 'Upvote', [:upvote, @inbox, message], method: :patch %>
 
   <%= message.cached_votes_total %>
@@ -20,13 +15,16 @@
   <%= message.cached_weighted_average %>
   
 
+  <br>
   
-  <p>
-    <strong>User:</strong>
+  <i>
+    by
     <%= message.user.email %>
-  </p>
+    on
+    <%= message.created_at.strftime('%H:%M, %d/%b/%Y') %>
+  </i>
 
+  <br><br>
   <%= button_to "Destroy", inbox_message_path(@inbox, message), method: :delete %>
-
 
 </div>
