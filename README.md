@@ -70,3 +70,7 @@
 
 - Turbo : Voting
 
+- Turbo : Flash messages
+
+
+
