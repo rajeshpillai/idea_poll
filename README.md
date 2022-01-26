@@ -64,4 +64,5 @@
   - Inbox -> Add Messages directly in inbox (inline)
   - Update the message count
   - Show messages when new message is added (without refresh)
+  - Add destroy (turbo)
 
