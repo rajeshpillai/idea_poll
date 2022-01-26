@@ -29,3 +29,6 @@ User.destroy_all
 
 end
 
+p "#{User.count} users created"
+p "#{Inbox.count} inboxes created"
+p "#{Message.count} messages created"
