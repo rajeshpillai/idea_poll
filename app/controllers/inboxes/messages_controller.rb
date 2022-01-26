@@ -5,15 +5,24 @@ module Inboxes
     def upvote
       @message = @inbox.messages.find(params[:id])
       flash[:notice] = 'voted!'
-      if current_user.voted_up_on? @message
-        @message.downvote_from current_user
-      elsif current_user.voted_down_on? @message
-        @message.liked_by current_user
-      else
-        @message.liked_by current_user
-      end
+      @message.upvote! current_user
       redirect_to @inbox
+
     end
+
+    # def upvote
+    #   @message = @inbox.messages.find(params[:id])
+    #   flash[:notice] = 'voted!'
+    #   if current_user.voted_up_on? @message
+    #     @message.downvote_from current_user
+    #   elsif current_user.voted_down_on? @message
+    #     @message.liked_by current_user
+    #   else
+    #     @message.liked_by current_user
+    #   end
+      
+    #   redirect_to @inbox
+    # end
 
 
     # POST /messages or /messages.json
