@@ -52,7 +52,7 @@
     - Inbox.find_each(&:save)   # update existing data
     - Inbox.pluck(:slug)  # for testing
 
-
+- Seed data
 
 
 
