@@ -18,11 +18,11 @@ User.destroy_all
   user = User.create(email: email, password: '123456')
 
   rand(2..3).times do 
-    faker_name = Faker::Quote.famous_last_words
+    faker_name = Faker::GreekPhilosophers.quote   # Faker::Lorem.question(word_count: 5)
     inbox = Inbox.create(name: faker_name, user: user)
 
     rand(2..5).times do 
-      message_body = Faker::Lorem.paragraph
+      message_body = Faker::Marketing.buzzwords  #Faker::Lorem.paragraph
       Message.create(body: message_body, inbox: inbox, user: user)
     end
   end
