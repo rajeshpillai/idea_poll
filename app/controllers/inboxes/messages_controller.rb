@@ -25,7 +25,8 @@ module Inboxes
           format.turbo_stream do
             render turbo_stream: [
               turbo_stream.update('message-form', partial: 'inboxes/messages/form', locals: {message: Message.new}),
-              turbo_stream.update('message-counter', @inbox.messages_count)
+              turbo_stream.update('message-counter', @inbox.messages_count),
+              turbo_stream.prepend('message-list', partial: 'inboxes/messages/message', locals: {message: @message})
             ]
           end
 

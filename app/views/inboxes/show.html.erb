@@ -15,4 +15,6 @@
 <%#= link_to 'New Message', new_inbox_message_path(@inbox) %>
 <%#= <%= link_to 'New Message', [:new, @inbox, :message] %> 
 
-<%= render partial:  'inboxes/messages/message', collection:  @inbox.messages %>
+<div id ="message-list">
+  <%= render partial:  'inboxes/messages/message', collection:  @inbox.messages %>
+</div>
