@@ -4,6 +4,7 @@
     <%= simple_format(message.body) %>
   </p>
 
+
   <%= button_to 'Upvote', [:upvote, @inbox, message], method: :patch %>
 
   <%= message.cached_votes_total %>
