@@ -72,5 +72,7 @@
 
 - Turbo : Flash messages
 
+- Refactor turbo flash
+
 
 

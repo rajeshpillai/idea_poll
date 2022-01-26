@@ -10,7 +10,7 @@ module Inboxes
       respond_to do |format|
         format.turbo_stream do 
           render turbo_stream: [
-            turbo_stream.update('flash', partial: 'shared/flash'),
+            render_turbo_flash,
             turbo_stream.replace(@message, partial: 'inboxes/messages/message', locals: { message: @message})
           ]
         end
@@ -42,7 +42,7 @@ module Inboxes
           format.turbo_stream do
             flash.now[:notice] = "Message #{@message.id} created!"
             render turbo_stream: [
-              turbo_stream.update('flash', partial: 'shared/flash'),
+              render_turbo_flash,
               turbo_stream.update('message-form', partial: 'inboxes/messages/form', locals: {message: Message.new}),
               turbo_stream.update('message-counter', @inbox.messages_count),
               turbo_stream.prepend('message-list', partial: 'inboxes/messages/message', locals: {message: @message})
@@ -56,7 +56,7 @@ module Inboxes
 
           format.turbo_stream do
             render turbo_stream: [
-              turbo_stream.update('flash', partial: 'shared/flash'),
+              render_turbo_flash,
               turbo_stream.update('message-form',partial: 'inboxes/messages/form', locals: {message: @message})
             ]
           end
