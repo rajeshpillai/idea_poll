@@ -2,8 +2,7 @@
   <%= render 'shared/errors', form: form %>
  
   <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, style: 'width:100%;padding: 5px 10px', maxlength: Message::MAX_BODY, rows: 10 %>
   </div>
 
 
