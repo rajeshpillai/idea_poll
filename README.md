@@ -56,5 +56,6 @@
 
 - Improving forms (maxlength etc)
 
-
+- Gem : bundle add meta-tags
+  - rails g meta_tags:install
 
