@@ -8,14 +8,13 @@ module Inboxes
       @message.upvote! current_user
 
       respond_to do |format|
-        format.turbo_stream do 
+        format.turbo_stream do
           render turbo_stream: [
             render_turbo_flash,
-            turbo_stream.replace(@message, partial: 'inboxes/messages/message', locals: { message: @message})
+            turbo_stream.replace(@message, partial: 'inboxes/messages/message', locals: { message: @message })
           ]
         end
       end
-
     end
 
     # def upvote
@@ -28,10 +27,9 @@ module Inboxes
     #   else
     #     @message.liked_by current_user
     #   end
-      
+
     #   redirect_to @inbox
     # end
-
 
     # POST /messages or /messages.json
     def create
@@ -43,21 +41,21 @@ module Inboxes
             flash.now[:notice] = "Message #{@message.id} created!"
             render turbo_stream: [
               render_turbo_flash,
-              turbo_stream.update('message-form', partial: 'inboxes/messages/form', locals: {message: Message.new}),
+              turbo_stream.update('message-form', partial: 'inboxes/messages/form', locals: { message: Message.new }),
               turbo_stream.update('message-counter', @inbox.messages_count),
-              turbo_stream.prepend('message-list', partial: 'inboxes/messages/message', locals: {message: @message})
+              turbo_stream.prepend('message-list', partial: 'inboxes/messages/message', locals: { message: @message })
             ]
           end
 
           format.html { redirect_to @inbox, notice: 'Message was successfully created.' }
           format.json { render :show, status: :created, location: @message }
         else
-          flash.now[:alert] = "Something went wrong!"
+          flash.now[:alert] = 'Something went wrong!'
 
           format.turbo_stream do
             render turbo_stream: [
               render_turbo_flash,
-              turbo_stream.update('message-form',partial: 'inboxes/messages/form', locals: {message: @message})
+              turbo_stream.update('message-form', partial: 'inboxes/messages/form', locals: { message: @message })
             ]
           end
           format.html { render :new, status: :unprocessable_entity }
@@ -87,7 +85,7 @@ module Inboxes
 
       respond_to do |format|
         flash[:notice] = "Message with ID #{@message.id} destroyed!"
-        format.turbo_stream 
+        format.turbo_stream
         format.html { redirect_to @inbox, notice: 'Message was successfully destroyed.' }
         format.json { head :no_content }
       end

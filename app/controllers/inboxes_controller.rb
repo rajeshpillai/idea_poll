@@ -13,13 +13,11 @@ class InboxesController < ApplicationController
   # GET /inboxes/1 or /inboxes/1.json
   def show
     set_meta_tags title: @inbox.name
-  
   end
 
   # GET /inboxes/new
   def new
     set_meta_tags title: "#{action_name.capitalize} #{controller_name.capitalize.singularize} "
-
 
     @inbox = Inbox.new
   end
@@ -27,7 +25,6 @@ class InboxesController < ApplicationController
   # GET /inboxes/1/edit
   def edit
     set_meta_tags title: "#{action_name.capitalize} #{controller_name.capitalize.singularize} "
-
   end
 
   # POST /inboxes or /inboxes.json
