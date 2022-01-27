@@ -14,11 +14,11 @@
  *= require_self
  */
 
- body {
+  body {
    margin: 0 auto;
    max-width: 500px;
    display: block;
- }
+ } 
 
  #notice {
    background-color: green;
