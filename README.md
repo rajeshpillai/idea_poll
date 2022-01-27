@@ -81,6 +81,7 @@
 
 - Turbo:  change 'status'
 
+- Toggle vote/unvote button
 
 
 
