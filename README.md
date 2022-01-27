@@ -103,8 +103,12 @@
 
 - ransack: turbo
 
+- Devise Confirmable
+
+- Devise: Turbo (support)
+
 
 ## Todos
   - Omniauth (github)
-  - Devise Confirmable
   - Turbo (autocomplete search on inbox)
+  - User page (for inboxes)
