@@ -1,4 +1,4 @@
-<div id="<%= dom_id message %>" class="message">
+<div id="<%= dom_id message %>" class="message" style="background-color:<%= status_color(message.status) %>">
   <%= simple_format(message.body) %>
 
   <b>

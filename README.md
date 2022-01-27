@@ -83,5 +83,7 @@
 
 - Toggle vote/unvote button
 
+- Change message color based on status
+
 
 
