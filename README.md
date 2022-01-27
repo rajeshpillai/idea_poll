@@ -107,6 +107,9 @@
 
 - Devise: Turbo (support)
 
+- Add a mailer (when a new message is posted)
+  - Preview all emails at http://localhost:3000/rails/mailers/messages_mailer
+  
 
 ## Todos
   - Omniauth (github)

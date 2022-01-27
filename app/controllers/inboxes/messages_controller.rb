@@ -35,8 +35,10 @@ module Inboxes
     def create
       @message = @inbox.messages.new(message_params)
 
+
       respond_to do |format|
         if @message.save
+          MessagesMailer.submitted(@message).deliver_later
           format.turbo_stream do
             flash.now[:notice] = "Message #{@message.id} created!"
             render turbo_stream: [
