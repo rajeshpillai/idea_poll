@@ -108,6 +108,7 @@
 - Devise: Turbo (support)
 
 - Add a mailer (when a new message is posted)
+  - rails g mailer messages submitted
   - Preview all emails at http://localhost:3000/rails/mailers/messages_mailer
   
 
