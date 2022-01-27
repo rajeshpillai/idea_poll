@@ -95,8 +95,13 @@
 
 - Disappearing flash messages (stimulus controller)
 
+- ransack
+  - bundle add ransack
+  - change the inbox controller
+  - add sort link to inbox index page
+  - add search field
 
 ## Todos
   - Omniauth (github)
   - Devise Confirmable
-  - Ransack for inboxes and messages (turbo framews)
+  - Ransack for inboxes and messages (turbo framews) (object search feature)

@@ -81,3 +81,5 @@ gem "pundit", "~> 2.1"
 gem "friendly_id", "~> 5.4"
 
 gem "meta-tags", "~> 2.16"
+
+gem "ransack", "~> 2.5"
