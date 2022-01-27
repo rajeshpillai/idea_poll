@@ -104,4 +104,3 @@
 ## Todos
   - Omniauth (github)
   - Devise Confirmable
-  - Ransack for inboxes and messages (turbo framews) (object search feature)
