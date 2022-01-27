@@ -1,5 +1,9 @@
 # README
 
+# Run rubocop
+  - bundle exec rubocop
+  - bundle exec rubocop -A (# auto fix)
+
 ## Steps
 
 - rails new <projectname> -db=postgresql
@@ -87,3 +91,4 @@
 
 - Refactor message_controller (set_message)
 
+- rubocop

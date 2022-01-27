@@ -15,7 +15,6 @@ module Inboxes
           ]
         end
       end
-
     end
 
     def upvote
