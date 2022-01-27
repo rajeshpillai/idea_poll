@@ -101,6 +101,10 @@
   - add sort link to inbox index page
   - add search field
 
+- ransack: turbo
+
+
 ## Todos
   - Omniauth (github)
   - Devise Confirmable
+  - Turbo (autocomplete search on inbox)

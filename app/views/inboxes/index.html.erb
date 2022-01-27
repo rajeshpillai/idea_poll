@@ -3,24 +3,29 @@
 <h1>Inboxes <%= @inboxes.length %> </h1>
 
 <div>
-  <%= search_form_for @q, html: { autocomplete: "off"} do |f| %>
+  <%= search_form_for @q, html: { autocomplete: "off"}, data: {turbo_frame: "search"} do |f| %>
     <%= f.label :name_cont %>
     <%= f.search_field :name_cont %>
   <%end%>
 </div>
 
-<div>
-  <%= sort_link(@q, :name, default_order: :desc) %>
-  <%= sort_link(@q, :created_at, default_order: :desc) %>
-  <%= sort_link(@q, :messages_count, default_orde: :desc) %>
+<%= Time.zone.now %>
 
-  <%= link_to "Clear search", request.path if request.query_parameters.any? %>
-</div>
+<%= turbo_frame_tag 'search' do %>
+  <div>
+    <%= sort_link(@q, :name, default_order: :desc) %>
+    <%= sort_link(@q, :created_at, default_order: :desc) %>
+    <%= sort_link(@q, :messages_count, default_orde: :desc) %>
 
-<div id="inboxes">
-  <% @inboxes.each do |inbox| %>
-    <%= render inbox %>
-  <% end %>
-</div>
+    <%= Time.zone.now %>
+    <%= link_to "Clear search", request.path if request.query_parameters.any? %>
+  </div>
+
+  <div id="inboxes">
+    <% @inboxes.each do |inbox| %>
+      <%= render inbox %>
+    <% end %>
+  </div>
+<% end %>
 
 <%= link_to "New inbox", new_inbox_path %>
