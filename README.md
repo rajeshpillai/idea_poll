@@ -85,5 +85,5 @@
 
 - Change message color based on status
 
-
+- Refactor message_controller (set_message)
 
