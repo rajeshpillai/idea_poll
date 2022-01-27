@@ -92,3 +92,11 @@
 - Refactor message_controller (set_message)
 
 - rubocop
+
+- Disappearing flash messages (stimulus controller)
+
+
+## Todos
+  - Omniauth (github)
+  - Devise Confirmable
+  - Ransack for inboxes and messages (turbo framews)
